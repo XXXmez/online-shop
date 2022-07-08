@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover{
+    color: red;
+}
+
+.header {
+}
+.nav {
+    padding: 10px 0;
+
+    &__container {
+        padding: 0 10px;
+        margin: 0 auto;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__logo {
+    }
+    &__links {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+    }
+    &__link {
+        display: flex;
+        &__a {
+            padding: 5px;
+        }
+    }
+    &__basket {
+    }
+}
