@@ -19,6 +19,7 @@
   "homepage": "https://github.com/XXXmez/online-shop#readme",
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
