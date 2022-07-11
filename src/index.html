@@ -27,11 +27,25 @@
     </header>
     <main class="main">
         <div class="main__container">
-            <section class="main__sorts"></section> <!-- меню сортировки -->
+            <section class="main__sorts">
+                <div class="sorts">
+                    <h2 class="sorts__title">Фильтры</h2>
+                    <div class="sorts__company"></div>
+                    <div class="sorts__amount"></div>
+                    <div class="sorts__release"></div>
+                    <div class="sorts__colors"></div>
+                    <div class="sorts__size"></div>
+                    <div class="sorts__popular"></div>
+                    <div class="sorts__reset"></div>
+                </div>
+            </section> <!-- меню сортировки -->
             <section class="main__catalog">
                 <div class="catalog"> <!-- каталог -->
                     <div class="catalog__menu">
-                        <p class="catalog__menu_count">2 product</p>
+                        <p class="catalog__menu__count">2 product</p>
+                        <div class="catalog__menu__search">
+                            <input placeholder="Search" autocomplete="off" autocapitalize="off" autocorrect="off" type="text" class="search-product" value="">
+                        </div>
                         <div class="catalog__menu_sort">
                             <p>Sort by</p>
                             <select name="sort" id="sort" >
@@ -45,27 +59,29 @@
                     <div class="catalog__products"> <!-- каталог карточек продукта -->
                         <div class="catalog__product product"> <!-- карточка продукта -->
                             <div class="product__img">
-                                <img src="./images/72614.png" alt="img">
+                                <img src="./images/sneakers1.jpg" alt="img">
                             </div>
                             <div class="product__desc">
                                 <div class="product__desc__name">Компьютер ASUS</div>
-                                <div class="product__desc__amount">11</div>
+                                <div class="product__desc__price">150 $</div>
+                                <div class="product__desc__amount">В наличии: 11</div>
                                 <div class="product__desc__release">2020</div>
-                                <div class="product__desc__color">G</div>
+                                <div class="product__desc__color"></div>
                                 <div class="product__desc__company">ASUS</div>
                             </div>
                             <div class="product__basket">
-                                <div class="product__basket__away">-</div>
+                                <button class="product__basket__away">-</button>
                                 <div class="product__basket__count">0</div>
-                                <div class="product__basket__add">+</div>
+                                <button class="product__basket__add">+</button>
                             </div>
                         </div>
                         <div class="catalog__product product"> <!-- карточка продукта -->
                             <div class="product__img">
-                                <img src="./images/preview.webp" alt="img">
+                                <img src="./images/sneakers2.jpg" alt="img">
                             </div>
                             <div class="product__desc">
                                 <div class="product__desc__name">Това</div>
+                                <div class="product__desc__price">150 $</div>
                                 <div class="product__desc__amount">11</div>
                                 <div class="product__desc__release">2020</div>
                                 <div class="product__desc__color">G</div>
@@ -79,10 +95,11 @@
                         </div>
                         <div class="catalog__product product"> <!-- карточка продукта -->
                             <div class="product__img">
-                                <img src="./images/preview1.webp" alt="img">
+                                <img src="./images/sneakers3.jpg" alt="img">
                             </div>
                             <div class="product__desc">
                                 <div class="product__desc__name">Това</div>
+                                <div class="product__desc__price">150 $</div>
                                 <div class="product__desc__amount">11</div>
                                 <div class="product__desc__release">2020</div>
                                 <div class="product__desc__color">G</div>
@@ -96,10 +113,11 @@
                         </div>
                         <div class="catalog__product product"> <!-- карточка продукта -->
                             <div class="product__img">
-                                <img src="./images/preview2.webp" alt="img">
+                                <img src="./images/sneakers4.jpg" alt="img">
                             </div>
                             <div class="product__desc">
                                 <div class="product__desc__name">Това</div>
+                                <div class="product__desc__price">150 $</div>
                                 <div class="product__desc__amount">11</div>
                                 <div class="product__desc__release">2020</div>
                                 <div class="product__desc__color">G</div>
@@ -113,10 +131,11 @@
                         </div>
                         <div class="catalog__product product"> <!-- карточка продукта -->
                             <div class="product__img">
-                                <img src="./images/preview3.webp" alt="img">
+                                <img src="./images/sneakers5.jpg" alt="img">
                             </div>
                             <div class="product__desc">
                                 <div class="product__desc__name">Това</div>
+                                <div class="product__desc__price">150 $</div>
                                 <div class="product__desc__amount">11</div>
                                 <div class="product__desc__release">2020</div>
                                 <div class="product__desc__color">G</div>
@@ -130,10 +149,11 @@
                         </div>
                         <div class="catalog__product product"> <!-- карточка продукта -->
                             <div class="product__img">
-                                <img src="./images/preview4.webp" alt="img">
+                                <img src="./images/sneakers6.jpg" alt="img">
                             </div>
                             <div class="product__desc">
                                 <div class="product__desc__name">Това</div>
+                                <div class="product__desc__price">150 $</div>
                                 <div class="product__desc__amount">11</div>
                                 <div class="product__desc__release">2020</div>
                                 <div class="product__desc__color">G</div>
@@ -147,10 +167,11 @@
                         </div>
                         <div class="catalog__product product"> <!-- карточка продукта -->
                             <div class="product__img">
-                                <img src="./images/72614.png" alt="img">
+                                <img src="./images/sneakers7.jpg" alt="img">
                             </div>
                             <div class="product__desc">
                                 <div class="product__desc__name">Това</div>
+                                <div class="product__desc__price">150 $</div>
                                 <div class="product__desc__amount">11</div>
                                 <div class="product__desc__release">2020</div>
                                 <div class="product__desc__color">G</div>
