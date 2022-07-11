@@ -75,21 +75,34 @@ a:hover{
     &__menu {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         margin: 10px 0 20px;
 
-        &_count {
+        &__count {
+            width: 130px;
+            flex-shrink: 0;
         }
         &__search {
+            width: 100%;
+            padding: 6px 20px;
+            border-radius: 50px;
+            background: #567a7a;
+            border: 3px solid #3eb3ea;
+
             .search-product {
                 line-height: 20px;
-                padding: 5px 15px;
-                border-radius: 50px;
                 border: 0;
+                width: 100%;
+                outline: none;
+                background: #567a7a;
             }
         }
-        &_sort {
+        &__sort {
             display: flex;
             gap: 10px;
+            flex-shrink: 0;
+            justify-content: flex-end;
+            width: 130px;
         }
     }
     
@@ -111,9 +124,9 @@ a:hover{
 
 .product {
     &__img {
-        margin: 10px;
-        width: 220px;
-        height: 220px;
+        margin: 20px;
+        width: 200px;
+        height: 200px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -159,7 +172,18 @@ a:hover{
             height: 20px;
             border-radius: 50%;
             border: 0;
-            background: yellow;
+            &_yellow {
+                background: yellow;
+            }
+            &_white {
+                background: white;
+            }
+            &_blue {
+                background: blue;
+            }
+            &_black {
+                background: black;
+            }
         }
         &__company {
             position: absolute;
@@ -175,11 +199,32 @@ a:hover{
         background-color: #2a5251;
         padding: 0px 10px 20px;
         display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 15px;
-        width: 100%;
+        flex-direction: column;
 
+        &__add__cart {
+            .basket__add {
+                background-color: #3eb3ea;
+                width: 140px;
+                line-height: 30px;
+                font-weight: 900;
+                border: 0;
+                border-radius: 20px;
+                font-size: 12px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #9ccadf;
+                }
+            }
+        }
+        &__editing {
+            display: none;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
         &__away {
             background-color: #d75454;
             width: 55px;
@@ -188,6 +233,11 @@ a:hover{
             border: 0;
             border-radius: 20px;
             font-size: 17px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #fb3232;
+            }
         }
         &__count {
         }
@@ -199,6 +249,11 @@ a:hover{
             border: 0;
             border-radius: 20px;
             font-size: 17px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #f3d70c;
+            }
         }
     }
 }
