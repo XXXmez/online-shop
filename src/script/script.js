@@ -12,14 +12,18 @@ import img5 from "../img/sneakers6.jpg"
 import img6 from "../img/sneakers7.jpg"
 
 
-const slider = document.querySelector('.sorts__amount__slider'),
+const amountSlider = document.querySelector('.sorts__amount__slider'),
     sortsAmountMim = document.querySelector('.sorts__amount__mim'),
     sortsAmountMax = document.querySelector('.sorts__amount__max'),
-    minMax = [sortsAmountMim, sortsAmountMax];
+    amounMinMax = [sortsAmountMim, sortsAmountMax];
 
+const releaseSlider = document.querySelector('.sorts__release__slider'),
+    sortsReleaseMim = document.querySelector('.sorts__release__mim'),
+    sortsReleaseMax = document.querySelector('.sorts__release__max'),
+    releaseMinMax = [sortsReleaseMim, sortsReleaseMax];
 
-if (slider) {
-    noUiSlider.create(slider, {
+if (amountSlider) {
+    noUiSlider.create(amountSlider, {
         start: [0, 100],
         connect: true,
         step: 1,
@@ -28,7 +32,21 @@ if (slider) {
             'max': 100
         }
     });
-    slider.noUiSlider.on('update', (values, handle) => {
-        minMax[handle].textContent = Math.round(values[handle])
+    amountSlider.noUiSlider.on('update', (values, handle) => {
+        amounMinMax[handle].textContent = Math.round(values[handle])
+    })
+}
+if (releaseSlider) {
+    noUiSlider.create(releaseSlider, {
+        start: [1990, 2022],
+        connect: true,
+        step: 1,
+        range: {
+            'min': 1990,
+            'max': 2022
+        }
+    });
+    releaseSlider.noUiSlider.on('update', (values, handle) => {
+        releaseMinMax[handle].textContent = Math.round(values[handle])
     })
 }
