@@ -1,3 +1,5 @@
+import Card from "./components/card/card"
+import loader from "./components/loader/loader"
 
 import "../style/style.scss";
 
@@ -356,5 +358,14 @@ const data = [
     
 ];
 
-console.log(data);
-console.log(JSON.stringify(data));
+const catalogProducts = document.querySelector('.catalog__products');
+
+
+
+
+
+new Card('1', catalogProducts).draw()
+
+new Card('2', catalogProducts).draw()
+
+const loader1 = new loader('./data/data.json').load()
