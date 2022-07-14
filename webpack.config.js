@@ -32,7 +32,7 @@ module.exports = {
                     outputPath: 'images',
                     name: '[name].[ext]'
                 },
-            },
+            }
         ]
     }
 };
