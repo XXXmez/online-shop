@@ -21,6 +21,7 @@ export default class Color {
                 const blockColor = document.createElement('div');
                 blockColor.className = 'sorts__colors__item_';
                 blockColor.className += e.color;
+                blockColor.style.background = e.color
                 
                 item.append(blockColor);
                 list.append(item);

@@ -12,7 +12,7 @@ export default class Company {
         const companyArr = [];
 
         this.data.forEach(e => {
-            if (companyArr.indexOf(e.company)) {
+            if (companyArr.indexOf(e.company) == -1) {
                 const companyItem = document.createElement('div');
                 companyItem.className = 'company__item';
                 const companyButton = document.createElement('button');

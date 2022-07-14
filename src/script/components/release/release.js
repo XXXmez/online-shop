@@ -19,7 +19,7 @@ export default class Release {
 
             const sortsReleaseTitle = document.createElement('h3');
             sortsReleaseTitle.className = 'sorts__release__title';
-            sortsReleaseTitle.textContent = 'В наличии';
+            sortsReleaseTitle.textContent = 'Год выпуска';
 
             const sortsReleaseRange = document.createElement('div');
             sortsReleaseRange.className = 'sorts__release__range';

@@ -9,15 +9,16 @@ export default class Card {
         cardProduct.className = 'catalog__product product';
         cardProduct.innerHTML = `
             <div class="product__img">
-                <img src="./images/sneakers1.jpg" alt="img">
+                <img src="./images/${this.data.img}" alt="img">
             </div>
             <div class="product__desc">
-                <div class="product__desc__name">Компьютер ASUS</div>
-                <div class="product__desc__price">150 $</div>
-                <div class="product__desc__amount">В наличии: 11</div>
-                <div class="product__desc__release">2020</div>
-                <div class="product__desc__color product__desc__color_yellow"></div>
-                <div class="product__desc__company">ASUS</div>
+                <div class="product__desc__name">${this.data.name}</div>
+                <div class="product__desc__price">${this.data.price} $</div>
+                <div class="product__desc__amount">В наличии: ${this.data.amount}</div>
+                <div class="product__desc__size">Размер: ${this.data.size}</div>
+                <div class="product__desc__release">${this.data.release}</div>
+                <div class="product__desc__color product__desc__color_${this.data.color}" style="background: ${this.data.color};"></div>
+                <div class="product__desc__company">${this.data.company}</div>
             </div>
             <div class="product__basket">
                 <div class="product__basket__add__cart">
@@ -29,8 +30,7 @@ export default class Card {
                     <button class="product__basket__add">+</button>
                 </div>
             </div>
-        `
-        console.log(cardProduct);
+        `;
         this.link.append(cardProduct)
 
         const basketAdd = cardProduct.querySelector('.basket__add');
