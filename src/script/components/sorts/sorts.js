@@ -7,15 +7,81 @@ class Sorts {
 
     sort() {
         const companyButtonActive = document.querySelectorAll('.company__button-active');
-        const sortsAmountMim = document.querySelector('.sorts__amount__mim');
-        const sortsAmountMax = document.querySelector('.sorts__amount__max');
-        const sortsReleaseMim = document.querySelector('.sorts__release__mim');
-        const sortsReleaseMax = document.querySelector('.sorts__release__max');
+
+        const sortsAmountMim = document.querySelector('.sorts__amount__mim').textContent;
+        const sortsAmountMax = document.querySelector('.sorts__amount__max').textContent;
+
+        const sortsReleaseMim = document.querySelector('.sorts__release__mim').textContent;
+        const sortsReleaseMax = document.querySelector('.sorts__release__max').textContent;
+
         const sortsColorsItemActiv = document.querySelectorAll('.sorts__colors__item-active');
-        const sortsSizesItem = document.querySelectorAll('.sorts__sizes__item-active');
+
+        const sortsSizesItem = document.querySelectorAll('.sorts__sizes__item-active p');
+
         const sortsPopularCheckbox = document.querySelector('.sorts__popular__checkbox');
 
-        const dataSort = [];
+        const dataSort = [...this.data];
+        const dataNew = [];
         
+        dataSort.forEach(element => {
+            let elemy = element;
+            if (companyButtonActive.length > 0) {
+                elemy = companyButtonActive.map(elem1 => {
+                    if (elemy.company == elem1.textContent) return elemy
+                    else return ''
+                })
+                elemy.forEach(e => {
+                    if (e != '') elemy = e
+                })
+            }
+            
+            
+            if (!Array.isArray(elemy) && typeof elemy == 'object') {
+                elemy = (elemy.amount >= sortsAmountMim && elemy.amount <= sortsAmountMax) ? elemy : '1';
+            } else {
+                return 
+            }
+            
+            if (!Array.isArray(elemy) && typeof elemy == 'object') {
+                elemy = (elemy.release >= sortsReleaseMim && elemy.release <= sortsReleaseMax) ? elemy : '2';
+            } else {
+                return
+            }
+            
+            if (sortsColorsItemActiv.length > 0) {
+                elemy = sortsColorsItemActiv.map(elem1 => {
+                    if (elemy.color == elem1.style.background) return elemy
+                    else return ''
+                })
+            
+                elemy.forEach(e => {
+                    if (e != '') elemy = e
+                })
+            }
+            
+        
+            if (sortsSizesItem.length > 0) {
+                elemy = sortsSizesItem.map(elem1 => {
+                    if (elemy.size == elem1.textContent) return elemy
+                    else return ''
+                })
+            
+                elemy.forEach(e => {
+                    if (e != '') elemy = e
+                })
+            }
+        
+            if (typeof elemy == 'object') {
+                console.log(elemy);
+                dataNew.push(elemy)
+                
+            }
+        })
+
+        console.log("data new: ", dataNew);
+        const renderCards = new RenderCard(dataNew);
+        renderCards.render()
     }
 }
+
+export default Sorts;

@@ -1,3 +1,5 @@
+import Sorts from "../sorts/sorts";
+
 export default class Color {
     constructor(data){
         this.data = data;
@@ -25,11 +27,18 @@ export default class Color {
                 
                 item.append(blockColor);
                 list.append(item);
+
+                item.addEventListener('click', () => {
+                    this.sort()
+                })
             }
         });
 
-        
-
         this.link.append(list)
+    }
+
+    sort () {
+        const sorts = new Sorts(this.data)
+        sorts.sort()
     }
 }

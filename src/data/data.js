@@ -247,7 +247,7 @@ const data = [
         amount: 10,
         company: 'Adidas children',
         color: 'white',
-        release: 2005
+        release: 2002
     },
     {
         img: 'sneakers26.jpg',
@@ -257,7 +257,7 @@ const data = [
         amount: 10,
         company: 'Adidas children',
         color: 'black',
-        release: 2005
+        release: 2003
     },
     {
         img: 'sneakers27.jpg',
@@ -267,14 +267,14 @@ const data = [
         amount: 10,
         company: 'Adidas children',
         color: 'blue',
-        release: 2005
+        release: 2004
     },
     {
         img: 'sneakers28.jpg',
         name: 'Кросовок №112',
         size: 1,
         price: 100,
-        amount: 10,
+        amount: 14,
         company: 'Adidas children',
         color: 'black',
         release: 2005
@@ -284,20 +284,20 @@ const data = [
         name: 'Кросовок №112',
         size: 1,
         price: 100,
-        amount: 10,
+        amount: 13,
         company: 'Adidas children',
         color: 'black',
-        release: 2005
+        release: 2006
     },
     {
         img: 'sneakers30.jpg',
         name: 'Кросовок №112',
         size: 1,
         price: 100,
-        amount: 10,
+        amount: 12,
         company: 'Adidas children',
         color: 'blue',
-        release: 2005
+        release: 2007
     },
     
 ];
