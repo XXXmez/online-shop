@@ -182,8 +182,8 @@ li {
         &__list {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
-            justify-content: space-between;
+            gap: 5px 0;
+            justify-content: flex-start;
         }
         &__item {
             cursor: pointer;

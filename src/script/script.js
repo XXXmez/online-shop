@@ -1,4 +1,3 @@
-import Card from "./components/card/card";
 import App from "./components/app/app"
 import data from "../data/data";
 
@@ -77,15 +76,14 @@ import img30 from "../img/sneakers30.jpg"
 //     })
 // }
 
-const catalogProducts = document.querySelector('.catalog__products');
+// const catalogProducts = document.querySelector('.catalog__products');
 
 
+// new Card('1', catalogProducts).draw()
+
+// new Card('2', catalogProducts).draw()
 
 
-
-new Card('1', catalogProducts).draw()
-
-new Card('2', catalogProducts).draw()
 
 // start
 const app = new App(data);

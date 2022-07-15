@@ -40,7 +40,5 @@ export default class Release {
             const range = new Range(sortsReleaseSlider, min, max, releaseMinMax)
             range.draw()
         }
-
-        
     }
 }
