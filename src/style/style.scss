@@ -194,15 +194,28 @@ li {
                 height: 25px;
                 border: 1px solid gray;
             }
-
-            &_black {background-color: black;}
-            &_red {background-color: red;}
-            &_yellow {background-color: yellow;}
-            &_blue {background-color: blue;}
-            &_gren {background-color: green;}
-            &_punk {background-color: pink;}
-            &_fiol {background-color:blueviolet;}
-            &_orange {background-color: orange;}
+        }
+        &__block-active {
+            position: relative;
+            &::before {
+                content: '';
+                width: 8px;
+                height: 2px;
+                border: 1px solid black;
+                background: white;
+                position: absolute;
+                transform: rotate(45deg) translate(9px, 6px);
+            }
+            &::after {
+                content: '';
+                width: 10px;
+                height: 2px;
+                border: 1px solid black;
+                border-right: 0;
+                background: white;
+                position: absolute;
+                transform: rotate(135deg) translate(1px, -12px);
+            }
         }
         
     }
@@ -227,6 +240,10 @@ li {
 
             &:hover {
                 border: 1px solid black;
+            }
+
+            &-active {
+                border: 1px solid #3eb3ea;
             }
         }
     }
@@ -293,7 +310,7 @@ li {
     }
 
     &__item {
-        cursor: pointer;
+        //cursor: pointer;
     }
 
     &__button {
@@ -303,6 +320,10 @@ li {
         line-height: 25px;
         border: none;
         background-color: transparent;
+
+        &-active {
+            color: #3eb3ea;
+        }
     }
 }
 
@@ -493,6 +514,32 @@ li {
 
             &:hover {
                 background-color: #f3d70c;
+            }
+        }
+    }
+}
+
+@media (max-width: 820px) {
+    .main {
+        &__container {
+            flex-direction: column;
+        }
+        &__sorts {
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 500px) {
+    .catalog {
+        &__menu {
+            flex-direction: column;
+            gap: 15px;
+
+            &__count {
+                width: auto;
+            }
+            &__sort {
+                width: auto;
             }
         }
     }

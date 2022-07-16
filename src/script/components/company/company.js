@@ -1,3 +1,5 @@
+import Sorts from "../sorts/sorts";
+
 export default class Company {
     constructor(data) {
         this.data = data;
@@ -23,10 +25,26 @@ export default class Company {
 
                 companyItem.append(companyButton)
                 company.append(companyItem);
+
+                companyButton.addEventListener('click', (e) => {
+                    this.sort(e.currentTarget)
+                })
             } else { return }
+            
             
         });
 
         this.sortsCompany.append(company);
+    }
+
+    sort (e) {
+        if (!e.classList.contains(e.classList[0]+'-active')) {
+            e.classList.add(e.classList[0]+'-active')
+        } else {
+            e.classList.remove(e.classList[0]+'-active')
+        }
+        
+        const sorts = new Sorts(this.data);
+        sorts.sort();
     }
 }

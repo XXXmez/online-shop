@@ -9,7 +9,7 @@ export default class RenderCard {
     }
 
     render() {
-        console.log('render data: ', this.data);
+        // console.log('render data: ', this.data);
         catalogProducts.innerHTML = '';
         catalogMenuCount.textContent = `${this.data.length} product`
         

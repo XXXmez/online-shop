@@ -21,15 +21,15 @@ export default class Color {
                 item.className = 'sorts__colors__item';
 
                 const blockColor = document.createElement('div');
-                blockColor.className = 'sorts__colors__item_';
-                blockColor.className += e.color;
+                blockColor.className = 'sorts__colors__block';
+                //blockColor.className += e.color;
                 blockColor.style.background = e.color
                 
                 item.append(blockColor);
                 list.append(item);
 
-                item.addEventListener('click', () => {
-                    this.sort()
+                item.addEventListener('click', (e) => {
+                    this.sort(e.currentTarget)
                 })
             }
         });
@@ -37,8 +37,14 @@ export default class Color {
         this.link.append(list)
     }
 
-    sort () {
-        const sorts = new Sorts(this.data)
-        sorts.sort()
+    sort (e) {
+        if (!e.firstChild.classList.contains(e.firstChild.classList[0]+'-active')) {
+            e.firstChild.classList.add(e.firstChild.classList[0]+'-active')
+        } else {
+            e.firstChild.classList.remove(e.firstChild.classList[0]+'-active')
+        }
+        
+        const sorts = new Sorts(this.data);
+        sorts.sort();
     }
 }

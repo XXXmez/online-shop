@@ -1,6 +1,6 @@
 import noUiSlider from "../../nouislider.min.js"
-import App from "../app/app.js";
 import data from "../../../data/data.js";
+import Sorts from "../sorts/sorts.js";
 
 export default class Range {
     constructor(elem, min, max, minMax){
@@ -8,6 +8,8 @@ export default class Range {
         this.min = min;
         this.max = max;
         this.minMax = minMax;
+
+        this.data = data;
     }
     draw(){
         noUiSlider.create(this.elem, {
@@ -24,8 +26,8 @@ export default class Range {
         })
         this.elem.noUiSlider.on('end', (values, handle) => {
             console.log('Запуск функции');
-            // const app = new App(data);
-            // app.launch();
+            const sorts = new Sorts(this.data)
+            sorts.sort()
         })
     }
 }

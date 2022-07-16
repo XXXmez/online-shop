@@ -88,3 +88,10 @@ import img30 from "../img/sneakers30.jpg"
 // start
 const app = new App(data);
 app.launch();
+
+const sortsResetBbutton = document.querySelector('.sorts__reset__button');
+
+sortsResetBbutton.addEventListener('click', () => {
+    const app = new App(data);
+    app.launch();
+});

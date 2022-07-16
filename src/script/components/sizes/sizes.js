@@ -1,3 +1,5 @@
+import Sorts from "../sorts/sorts";
+
 export default class Sizes {
     constructor(data){
         this.data = data;
@@ -23,11 +25,24 @@ export default class Sizes {
                 
                 item.append(blockP);
                 list.append(item);
+
+                item.addEventListener('click', (e) => {
+                    this.sort(e.currentTarget)
+                });
             }
         });
 
-        
-
         this.link.append(list)
+    }
+
+    sort (e) {
+        if (!e.classList.contains(e.classList[0]+'-active')) {
+            e.classList.add(e.classList[0]+'-active')
+        } else {
+            e.classList.remove(e.classList[0]+'-active')
+        }
+        
+        const sorts = new Sorts(this.data);
+        sorts.sort();
     }
 }
