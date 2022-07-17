@@ -1,4 +1,4 @@
-import Sorts from "../sorts/sorts";
+import Sorts from "../filters/filters";
 
 export default class Sizes {
     constructor(data){

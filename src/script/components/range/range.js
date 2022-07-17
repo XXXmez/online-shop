@@ -1,6 +1,6 @@
 import noUiSlider from "../../nouislider.min.js"
 import data from "../../../data/data.js";
-import Sorts from "../sorts/sorts.js";
+import Sorts from "../filters/filters.js";
 
 export default class Range {
     constructor(elem, min, max, minMax){

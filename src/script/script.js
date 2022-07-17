@@ -1,5 +1,6 @@
-import App from "./components/app/app"
+import { App } from "./components/app/app"
 import data from "../data/data";
+import Sorts from "./components/filters/filters";
 
 import "../style/style.scss";
 
@@ -89,9 +90,33 @@ import img30 from "../img/sneakers30.jpg"
 const app = new App(data);
 app.launch();
 
-const sortsResetBbutton = document.querySelector('.sorts__reset__button');
+const sortsResetBbutton = document.querySelector('.sorts__reset__button'),
+    searchInput = document.querySelector('.catalog__menu__search-input'),
+    searchButton = document.querySelector('.catalog__menu__search-button'),
+    searchReset = document.querySelector('.catalog__menu__search-reset'),
+    popularCheckbox = document.querySelector('.sorts__popular__checkbox');
 
 sortsResetBbutton.addEventListener('click', () => {
     const app = new App(data);
     app.launch();
 });
+
+searchButton.addEventListener('click', () => {
+    const sorts = new Sorts(data)
+    sorts.sort()
+});
+searchReset.addEventListener('click', () => {
+    searchInput.value = '';
+    const sorts = new Sorts(data)
+    sorts.sort()
+});
+
+popularCheckbox.addEventListener('click', () => {
+    const sorts = new Sorts(data)
+    sorts.sort()
+});
+
+document.querySelector('#sort').addEventListener('change', () => {
+    const sorts = new Sorts(data)
+    sorts.sort()
+})

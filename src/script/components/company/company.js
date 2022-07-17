@@ -1,4 +1,4 @@
-import Sorts from "../sorts/sorts";
+import Sorts from "../filters/filters";
 
 export default class Company {
     constructor(data) {

@@ -5,7 +5,7 @@ import Color from "../color/color";
 import Sizes from "../sizes/sizes";
 import RenderCard from "../card/render";
 
-export default class App {
+class App {
     constructor(data) {
         this.data = data;
     }
@@ -30,3 +30,5 @@ export default class App {
         renderCards.render()
     }
 }
+
+export {App}

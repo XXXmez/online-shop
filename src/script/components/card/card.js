@@ -2,6 +2,7 @@ export default class Card {
     constructor (data, link) {
         this.data = data;
         this.link = link;
+        this.basket = 0;
     }
 
     draw() {
@@ -31,15 +32,30 @@ export default class Card {
                 </div>
             </div>
         `;
+
+        if (this.data.popular) {
+            cardProduct.style.border = '2px solid #3eb3ea';
+            cardProduct.children[0].style.margin = '18px';
+        }
+
         this.link.append(cardProduct)
 
+        const basketAddCart = cardProduct.querySelector('.product__basket__add__cart');
+        const basketEditing = cardProduct.querySelector('.product__basket__editing');
         const basketAdd = cardProduct.querySelector('.basket__add');
         basketAdd.addEventListener('click', () => {
-            this.log()
+            this.basketAdd(basketAdd, basketEditing)
         });
     }
 
-    log() {
-        console.log(this.data)
+    basketAdd(oldElem, newElem) {
+        this.basket++
+        oldElem.style.display = 'none'
+        newElem.style.display = 'flex'
+
+    }
+
+    check() {
+
     }
 }

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="body">
     <header class="header">
@@ -153,7 +154,7 @@
                     <div class="sorts__popular">
                         <h3 class="sorts__popular__title">Популярное</h3>
                         <div class="sorts__popular__options">
-                            <input type="checkbox" name="Избранное" id="popular__checkbox" class="sorts__popular__checkbox">
+                            <input type="checkbox" name="Избранное" id="popular__checkbox" class="sorts__popular__checkbox" value="Только популярное">
                             <span class="sorts__popular__description">Только популярное</span>
                         </div>
                     </div>
@@ -167,15 +168,17 @@
                     <div class="catalog__menu">
                         <p class="catalog__menu__count">2 product</p>
                         <div class="catalog__menu__search">
-                            <input placeholder="Search" autocomplete="off" autocapitalize="off" autocorrect="off" type="text" class="search-product" value="">
+                            <input placeholder="Поиск по названию" autocomplete="off" type="text" class="catalog__menu__search-input">
+                            <div class="catalog__menu__search-button"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div class="catalog__menu__search-reset"><i class="fa-solid fa-xmark"></i></div>
                         </div>
                         <div class="catalog__menu__sort">
                             <p>Sort by</p>
                             <select name="sort" id="sort" >
-                                <option value="1">11</option>
-                                <option value="2">22</option>
-                                <option value="3">33</option>
-                                <option value="4">44</option>
+                                <option value="sortsNameDecrease">по названию в возрастающем</option>
+                                <option value="sortsNameIncreasing">по названию в убывающем</option>
+                                <option value="sortsReleaseDecrease">по году в возрастающем</option>
+                                <option value="sortsReleaseIncreasing">по году в убывающем</option>
                             </select>
                         </div>
                     </div> <!-- меню каталога -->
