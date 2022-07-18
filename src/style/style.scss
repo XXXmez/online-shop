@@ -61,6 +61,18 @@ li {
         }
     }
     &__basket {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &-span {
+            display: block;
+            min-width: 25px;
+            line-height: 25px;
+            border-radius: 50px;
+            text-align: center;
+            background-color: #0d2a29;
+        }
     }
 }
 
@@ -497,14 +509,14 @@ li {
         }
     }
     
-    &__basket {
+    &__button {
         background-color: #2a5251;
         padding: 0px 10px 20px;
         display: flex;
         align-items: center;
         flex-direction: column;
 
-        &__add__cart {
+        &__add {
             .basket__add {
                 background-color: #3eb3ea;
                 width: 140px;
@@ -521,41 +533,22 @@ li {
                 }
             }
         }
-        &__editing {
+        &__delete {
             display: none;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-        &__away {
-            background-color: #d75454;
-            width: 55px;
-            line-height: 30px;
-            font-weight: 900;
-            border: 0;
-            border-radius: 20px;
-            font-size: 17px;
-            cursor: pointer;
+            .basket__delete {
+                background-color: #ea523e;
+                width: 140px;
+                line-height: 30px;
+                font-weight: 900;
+                border: 0;
+                border-radius: 20px;
+                font-size: 12px;
+                cursor: pointer;
+                transition: .3s;
 
-            &:hover {
-                background-color: #fb3232;
-            }
-        }
-        &__count {
-        }
-        &__add {
-            background-color: #d7c754;
-            width: 55px;
-            line-height: 30px;
-            font-weight: 900;
-            border: 0;
-            border-radius: 20px;
-            font-size: 17px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: #f3d70c;
+                &:hover {
+                    background-color: #dfad9c;
+                }
             }
         }
     }

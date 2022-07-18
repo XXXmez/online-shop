@@ -4,6 +4,7 @@ import Release from "../release/release";
 import Color from "../color/color";
 import Sizes from "../sizes/sizes";
 import RenderCard from "../card/render";
+import Basket from "../basket/basket";
 
 class App {
     constructor(data) {
@@ -31,4 +32,11 @@ class App {
     }
 }
 
-export {App}
+const basket = new Basket();
+
+const navBasket = document.querySelector('.nav__basket');
+navBasket.addEventListener('click', () => {
+    console.log(basket.getArr());
+})
+
+export {App, basket}

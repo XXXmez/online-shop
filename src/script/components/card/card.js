@@ -1,8 +1,9 @@
+import {basket} from "../app/app"
+
 export default class Card {
     constructor (data, link) {
         this.data = data;
         this.link = link;
-        this.basket = 0;
     }
 
     draw() {
@@ -21,14 +22,12 @@ export default class Card {
                 <div class="product__desc__color product__desc__color_${this.data.color}" style="background: ${this.data.color};"></div>
                 <div class="product__desc__company">${this.data.company}</div>
             </div>
-            <div class="product__basket">
-                <div class="product__basket__add__cart">
+            <div class="product__button">
+                <div class="product__button__add">
                     <button class="basket__add">Add</button>
                 </div>
-                <div class="product__basket__editing">
-                    <button class="product__basket__away">-</button>
-                    <div class="product__basket__count">0</div>
-                    <button class="product__basket__add">+</button>
+                <div class="product__button__delete">
+                    <button class="basket__delete">Delete</button>
                 </div>
             </div>
         `;
@@ -38,20 +37,41 @@ export default class Card {
             cardProduct.children[0].style.margin = '18px';
         }
 
-        this.link.append(cardProduct)
-
+        const productButtonAdd = cardProduct.querySelector('.product__button__add');
+        const productButtonDelete = cardProduct.querySelector('.product__button__delete');
         const basketAdd = cardProduct.querySelector('.basket__add');
+        const basketDelete = cardProduct.querySelector('.basket__delete');
+
+        const currentBasket = basket.getArr();
+        currentBasket.forEach(e => {
+            if (e.id == this.data.id) {
+                productButtonAdd.style.display = 'none';
+                productButtonDelete.style.display = 'block';
+            }
+        })
+
         basketAdd.addEventListener('click', () => {
-            this.basketAdd()
+            this.basketAdd(this.data, productButtonAdd, productButtonDelete)
         });
+
+        basketDelete.addEventListener('click', () => {
+            this.basketDelete(this.data, productButtonDelete, productButtonAdd)
+        });
+
+        this.link.append(cardProduct)
     }
 
-    basketAdd() {
-        this.basket++
-        console.log(this.basket);
+    basketAdd(data, elemO, elemN) {
+        elemO.style.display = 'none';
+        elemN.style.display = 'block';
+
+        basket.add(data)
     }
 
-    check() {
+    basketDelete(data, elemO, elemN) {
+        elemO.style.display = 'none';
+        elemN.style.display = 'block';
 
+        basket.delete(data)
     }
 }
