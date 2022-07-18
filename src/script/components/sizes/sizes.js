@@ -1,4 +1,4 @@
-import Sorts from "../filters/filters";
+import Filters from "../filters/filters";
 
 export default class Sizes {
     constructor(data){
@@ -16,21 +16,27 @@ export default class Sizes {
             if (sizesArr.indexOf(e.size) == -1) {
                 sizesArr.push(e.size);
                 
-                const item = document.createElement('li');
                 
-                item.className = 'sorts__sizes__item';
-
-                const blockP = document.createElement('p');
-                blockP.textContent = e.size
-                
-                item.append(blockP);
-                list.append(item);
-
-                item.addEventListener('click', (e) => {
-                    this.sort(e.currentTarget)
-                });
             }
         });
+
+        sizesArr.sort((a,b) => a - b);
+
+        sizesArr.forEach((e) => {
+            const item = document.createElement('li');
+            
+            item.className = 'sorts__sizes__item';
+
+            const blockP = document.createElement('p');
+            blockP.textContent = e
+            
+            item.append(blockP);
+            list.append(item);
+
+            item.addEventListener('click', (e) => {
+                this.sort(e.currentTarget)
+            });
+        })
 
         this.link.append(list)
     }
@@ -42,7 +48,7 @@ export default class Sizes {
             e.classList.remove(e.classList[0]+'-active')
         }
         
-        const sorts = new Sorts(this.data);
+        const sorts = new Filters(this.data);
         sorts.sort();
     }
 }

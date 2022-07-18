@@ -6,13 +6,13 @@ export default class Color {
         this.link = document.querySelector('.sorts__colors__options > div')
     }
 
-    draw() {
+    draw () {
         this.link.innerHTML = ''
         const colorArr = [];
         const list = document.createElement('ul');
         list.className = 'sorts__colors__list';
 
-        this.data.forEach(e => {
+        this.data.forEach((e) => {
             if (colorArr.indexOf(e.color) == -1) {
                 colorArr.push(e.color);
                 

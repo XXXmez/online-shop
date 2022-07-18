@@ -19,7 +19,7 @@ export default class Amount {
 
             const sortsAmountTitle = document.createElement('h3');
             sortsAmountTitle.className = 'sorts__amount__title';
-            sortsAmountTitle.textContent = 'В наличии';
+            sortsAmountTitle.textContent = 'Кол-во шнурков';
 
             const sortsAmountRange = document.createElement('div');
             sortsAmountRange.className = 'sorts__amount__range';

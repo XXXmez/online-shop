@@ -26,7 +26,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader', "sass-loader"]
             },
             {
-                test: /\.(png|jpe?g|webp|gif|svg)$/i,
+                test: /\.(png|jpe?g|webp|gif|svg|ico)$/i,
                 loader: 'file-loader',
                 options: {
                     outputPath: 'images',

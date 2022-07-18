@@ -15,7 +15,7 @@ export default class Card {
             <div class="product__desc">
                 <div class="product__desc__name">${this.data.name}</div>
                 <div class="product__desc__price">${this.data.price} $</div>
-                <div class="product__desc__amount">В наличии: ${this.data.amount}</div>
+                <div class="product__desc__amount">Кол-во шнурков: ${this.data.amount}</div>
                 <div class="product__desc__size">Размер: ${this.data.size}</div>
                 <div class="product__desc__release">${this.data.release}</div>
                 <div class="product__desc__color product__desc__color_${this.data.color}" style="background: ${this.data.color};"></div>
@@ -40,19 +40,15 @@ export default class Card {
 
         this.link.append(cardProduct)
 
-        const basketAddCart = cardProduct.querySelector('.product__basket__add__cart');
-        const basketEditing = cardProduct.querySelector('.product__basket__editing');
         const basketAdd = cardProduct.querySelector('.basket__add');
         basketAdd.addEventListener('click', () => {
-            this.basketAdd(basketAdd, basketEditing)
+            this.basketAdd()
         });
     }
 
-    basketAdd(oldElem, newElem) {
+    basketAdd() {
         this.basket++
-        oldElem.style.display = 'none'
-        newElem.style.display = 'flex'
-
+        console.log(this.basket);
     }
 
     check() {
